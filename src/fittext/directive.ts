@@ -4,8 +4,6 @@ import { Subject, Observable } from 'rxjs';
 import { style } from '@angular/animations';
 import { Directive, ElementRef, OnInit, Renderer2, OnDestroy, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { ElementQueries, ResizeSensor } from 'css-element-queries';
-import { isNull } from '@angular/compiler/src/output/output_ast';
-
 
 @Directive({
   selector: '[fittext]'
