@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "target": "es5",
+    "declaration": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "skipMetadataEmit": false
+  },
+  "include": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "exclude": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "files": [
+    "index.ts"
+  ]
+}
