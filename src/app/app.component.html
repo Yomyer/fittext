@@ -4,21 +4,35 @@
   </div>
 </h2>
 Max ({{max}})
-<input [(ngModel)]="max">
-Min ({{min}})
+<input [(ngModel)]="max"> Min ({{min}})
 <input [(ngModel)]="min">
 <h2>
   <div style="width:245px;background:rgba(0,0,0,.1);height:30px">
     <span [fittext]="disable">This span is too big for this div</span>
   </div>
 </h2>
-<br><br><br>
+<br>
+<br>
+<br>
 <button (click)="disable = !disable">{{ disable ? 'Disable' : 'Enable' }}</button>
 
 <h1>Ellipsis</h1>
 <h2>
   <div style="width:245px;background:rgba(0,0,0,.1);height:60px">
-    <div [fittext]="false" [ellipsis]="ellipsis">This span is too big for this div whit ellipsis, no <small>fittext<strong> asd</strong></small></div>
+    <div [fittext]="false" [ellipsis]="ellipsis">This span is too big for this div whit ellipsis, no
+      <small>fittext
+        <strong> asd</strong>
+      </small>
+    </div>
   </div>
 </h2>
 <button (click)="ellipsis = !ellipsis">{{ ellipsis ? 'normal' : 'ellipsis' }}</button>
+
+<div style="width:33%">
+  <p class="exercise-title" style="height: 100px">
+    <b fittext>{{ title }}}</b>
+  </p>
+  <p class="exercise-desc">
+    <span fittext>{{ text }}</span>
+  </p>
+</div>

@@ -9,4 +9,6 @@ export class AppComponent {
   max = 40;
   min = 20;
   ellipsis = true;
+  title = 'Test con zigzagdas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasda';
+  text = 'das dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasdadas dasdadasda';
 }

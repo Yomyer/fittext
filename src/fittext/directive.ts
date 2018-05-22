@@ -2,15 +2,18 @@ import { FitTextData } from './data';
 
 import { Subject, Observable } from 'rxjs';
 import { style } from '@angular/animations';
-import { Directive, ElementRef, OnInit, Renderer2, OnDestroy, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
+import {
+  Directive, ElementRef, AfterViewInit, Renderer2, OnDestroy,
+  Input, OnChanges, SimpleChanges, SimpleChange
+} from '@angular/core';
 import { ElementQueries, ResizeSensor } from 'css-element-queries';
 
 
 @Directive({
   selector: '[fittext]',
-  exportAs: 'fittext',
+  exportAs: 'fittext'
 })
-export class FittextDirective implements OnInit, OnDestroy, OnChanges {
+export class FittextDirective implements AfterViewInit, OnDestroy, OnChanges {
   @Input('fittext') fittext: any = true;
   @Input('compression') compression = 1;
   @Input('container') container;
@@ -63,9 +66,11 @@ export class FittextDirective implements OnInit, OnDestroy, OnChanges {
   constructor(
     private element: ElementRef,
     private renderer: Renderer2
-  ) { }
+  ) {
 
-  ngOnInit(): void {
+  }
+
+  ngAfterViewInit() {
     this.first = new FitTextData(this.ele);
 
     this.mutableObserver();
@@ -108,7 +113,10 @@ export class FittextDirective implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy(): void {
-    this.mutable.destroy();
+    /*
+    if (this.mutable) {
+      this.mutable.destroy();
+    }*/
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -155,6 +163,7 @@ export class FittextDirective implements OnInit, OnDestroy, OnChanges {
     }
 
     this.renderer.setStyle(this.parent, 'overflow', this.disabled ? 'auto' : 'hidden');
+    this.renderer.setStyle(this.ele, 'display', this.disabled ? 'initial' : 'block');
 
     const data = new FitTextData(this.ele);
     if (
@@ -187,7 +196,7 @@ export class FittextDirective implements OnInit, OnDestroy, OnChanges {
   }
 
   cut(remove = false) {
-    if (!this.ellipsis || this.ele.innerHTML === this.ellipsisSymbol || !this.ele.innerHTML) {
+    if (!this.ellipsis || this.ele.innerHTML === this.ellipsisSymbol || !this.ele.innerHTML) {
       return;
     }
     if (this.ele.offsetHeight > this.parent.offsetHeight || this.ele.offsetWidth > this.parent.offsetWidth) {
