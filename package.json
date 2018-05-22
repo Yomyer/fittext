@@ -1,12 +1,12 @@
 {
   "name": "@yomyer/fittext",
-  "version": "5.2.6-rc2",
+  "version": "5.2.7",
   "license": "MIT",
   "description": "Fit Text",
   "author": "Yomyer New Line S.L.",
   "scripts": {
     "gulp": "gulp inline-templates",
-    "npm": "cd dist && npm publish --access=public",
+    "npm": "cd dist && npm publish --access=public --tag=old",
     "copy-files": "cp package.json dist && cp readme.md dist && cp .npmignore dist",
     "build": "rm -rf dist && tsc  && npm run copy-files && npm run npm",
     "test": "cd dist && ls",
