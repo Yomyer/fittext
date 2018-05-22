@@ -7,7 +7,8 @@ import { ElementQueries, ResizeSensor } from 'css-element-queries';
 
 
 @Directive({
-  selector: '[fittext]'
+  selector: '[fittext]',
+  exportAs: 'fittext',
 })
 export class FittextDirective implements OnInit, OnDestroy, OnChanges {
   @Input('fittext') fittext: any = true;
