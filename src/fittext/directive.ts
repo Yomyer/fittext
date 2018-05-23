@@ -46,6 +46,7 @@ export class FittextDirective implements AfterViewInit, OnDestroy, OnChanges {
 
   mutable: ResizeSensor;
   first: FitTextData;
+  mutating = false;
 
   get ele() {
     return this.element.nativeElement;
@@ -152,8 +153,15 @@ export class FittextDirective implements AfterViewInit, OnDestroy, OnChanges {
       return;
     }
 
-    this.mutable = new ResizeSensor(this.parent, () => {
-      this.ajust(null);
+    this.mutable = new ResizeSensor(this.parent, (a) => {
+      if (!this.mutating) {
+        this.reset();
+        this.ajust(null);
+        this.mutating = true;
+      }
+      setTimeout(() => {
+        this.mutating = false;
+      }, 100);
     });
   }
 
@@ -204,8 +212,6 @@ export class FittextDirective implements AfterViewInit, OnDestroy, OnChanges {
 
       this.cut(true);
 
-    } else if (!remove) {
-      this.resetContent();
     }
   }
 

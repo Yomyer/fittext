@@ -22,3 +22,12 @@ Min ({{min}})
   </div>
 </h2>
 <button (click)="ellipsis = !ellipsis">{{ ellipsis ? 'normal' : 'ellipsis' }}</button>
+
+<div fxLayout="column" fxLayoutAlign="space-between none" style="height: 100px; width: 200px; background:rgba(0,0,0,.1)" >
+  <div fxFlex="auto" style="overflow: hidden">
+    <div [fittext]="false">dsa dasda sdas dasd asdada sdas dasd asdada sdas dasd asdada sdas dasd asda s </div>
+  </div>
+  <div fxFlex style="overflow: hidden">
+    <div [fittext]="false">dsadasda dasda sda da sdasd ada d asda sda sdada sdasd asd ad asd ada sda dasdasdasda</div>
+  </div>
+</div>
