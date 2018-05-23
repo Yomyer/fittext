@@ -4,6 +4,10 @@
   "license": "MIT",
   "description": "Fit Text",
   "author": "Yomyer New Line S.L.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yomyer/fittext"
+  },
   "scripts": {
     "gulp": "gulp inline-templates",
     "npm": "cd dist && npm publish --access=public",
@@ -13,12 +17,12 @@
     "watch": "ng serve --port 3020 --open"
   },
   "dependencies": {
-    "@angular/common": "^6.0.0",
-    "@angular/core": "^6.0.0",
-    "css-element-queries": "^1.0.2",
-    "rxjs": "^6.0.0"
+    "css-element-queries": "^1.0.2"
   },
   "devDependencies": {
+    "rxjs": "^6.0.0",
+    "@angular/common": "^6.0.0",
+    "@angular/core": "^6.0.0",
     "@angular/compiler": "^6.0.0",
     "zone.js": "^0.8.26",
     "core-js": "^2.5.4",
